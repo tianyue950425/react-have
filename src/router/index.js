@@ -15,6 +15,7 @@ const router =
 	<Provider store={store}>
 		<Router>
 		<App>
+			<Redirect path="/" to="/home"></Redirect>
 			<Switch>
 			<Route path="/home" component={()=>
 				<Home>
