@@ -11,11 +11,11 @@ import Kitchen from "../components/Home/Kitchen";
 import Textiles from "../components/Home/Textiles";
 import Furniture from "../components/Home/Furniture";
 import Login from "../components/Login";
+import Center from "../components/Center";
 const router = 
 	<Provider store={store}>
 		<Router>
-		<App>
-			<Redirect path="/" to="/home"></Redirect>
+		<App>		
 			<Switch>
 			<Route path="/home" component={()=>
 				<Home>
@@ -31,6 +31,8 @@ const router =
 				</Home>
 			}></Route>
 			<Route path="/login" component={Login}></Route>
+			<Route path="/center" component={Center}></Route>
+			<Redirect path="" to="/home"></Redirect>
 			</Switch>
 			</App>
 		</Router>

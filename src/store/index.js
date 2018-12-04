@@ -1,6 +1,6 @@
 import {createStore,combineReducers ,applyMiddleware, compose} from "redux";// createStore 创建store对象
 import promiseMid from "redux-promise";
-import decorationReducer from "./decorationReducer"
+import decorationReducer from "./Reducers/decorationReducer"
 const reducer = combineReducers({
 	decorationReducer
 })

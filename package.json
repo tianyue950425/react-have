@@ -15,7 +15,7 @@
     "redux": "^4.0.1",
     "redux-promise": "^0.6.0",
     "sass-loader": "^7.1.0",
-    "swipe": "^1.7.7"
+    "swiper": "^4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

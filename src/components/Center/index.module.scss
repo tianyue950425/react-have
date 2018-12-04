@@ -1,0 +1,40 @@
+.pht{
+    width:414px;
+    margin :0 auto;
+	img{
+    width:100%;
+	height:226px;
+	}	
+}
+.new{
+	width:100%;
+	height:175px;
+	.title{
+		text-align: center;
+		width:100%;
+    	padding-top:40px;
+  	  	padding-bottom:20px;
+  	  	font-size:16px;
+	}
+	.tit{
+		padding-bottom:40px;
+		margin-top:38px;
+		text-align: center;
+		font-size:16px;
+	}
+}
+.list{
+	.top{
+		text-align: center;
+		color:#4a4a4a;
+	 	font-size:16px;
+		padding-top:40px;
+		padding-bottom:20px;
+	}
+	.have{
+		padding:0 17px 17px;
+		img{
+			width:100%;
+		}
+	}
+}
