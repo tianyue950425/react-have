@@ -1,7 +1,8 @@
 import {createStore,combineReducers ,applyMiddleware, compose} from "redux";// createStore 创建store对象
 import promiseMid from "redux-promise";
+import decorationReducer from "./decorationReducer"
 const reducer = combineReducers({
-	
+	decorationReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
