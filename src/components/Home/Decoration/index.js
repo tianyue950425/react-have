@@ -8,7 +8,7 @@ class Decoration extends Component{
 	constructor(props) {
 	  super(props);
 	  this.state = {
-	  	animating:true
+		isShow:true
 	  };
 	}
 	render(){
@@ -29,27 +29,46 @@ class Decoration extends Component{
 						:null
 					}
 				</div>
-				<ActivityIndicator
-				  toast
-				  text="Loading..."
-				  animating={this.state.animating}
-				/>
+
+				{
+					this.state.isShow?
+					<ActivityIndicator
+					  toast
+					  text="Loading..."
+					  animating={true}
+					/>
+					:null
+				}
+					
 			</div>
 			)
 	}
 	componentDidMount(){
 		if(this.props.list.length == 0){
 			this.props.getDecorationList();
-			setTimeout(()=>{
-				this.setState((prev)=>{
-					console.log(prev.animating)
-						return {
-							animating:false
-						}
-				})
-			},1000)
-			console.log('aaaaaa')
+			// setTimeout(()=>{
+			// 	this.setState((prev)=>{
+			// 		console.log(prev.animating)
+			// 			return {
+			// 				animating:false
+			// 			}
+			// 	})
+			// },1000)
+			
 		}
+		this.setState({
+			isShow:false
+		})
+
+	}
+
+	componentWillReceiveProps(nextProps){
+		
+			this.setState({
+				isShow:false
+			})	
+			console.log("有")
+		
 	}
 	handleClick(id){
 		this.props.history.push(`/detail/${id}`)
@@ -60,5 +79,6 @@ export default connect((state)=>{
 	console.log(state.decorationReducer)
 	return{
 		list:state.decorationReducer
+
 	}
 },action)(Decoration)

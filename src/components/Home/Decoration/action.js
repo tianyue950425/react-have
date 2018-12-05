@@ -12,6 +12,7 @@ const action = {
 				type:'homeDecoration',
 				payload:res.data.data,
 			}
+			
 		})
 	}
 }
