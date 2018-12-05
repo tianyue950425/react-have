@@ -7,7 +7,7 @@ class Home extends Component{
 	  super(props);
 	
 	  this.state = {
-	  	bottom1:true,
+	  	bottom1:false,
 	  	bottom2:false,
 	  	bottom3:false,
 	  	bottom4:false,

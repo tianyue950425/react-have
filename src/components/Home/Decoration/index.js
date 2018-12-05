@@ -14,7 +14,7 @@ class Decoration extends Component{
 	render(){
 		return (
 			<div>
-				<img src={this.props.list.imageUrl}/>
+			<img src={this.props.list.imageUrl}/>
 				<div className={css.box}>
 					{this.props.list.items?
 						<ul className={css.list}>
@@ -27,15 +27,17 @@ class Decoration extends Component{
 							})}
 						</ul>
 						:null
-					} 
-				</div>
 
+
+
+					}
+					</div>
 				{
 					this.state.isShow?
 					<ActivityIndicator
 					  toast
 					  text="Loading..."
-					  animating={true}
+					  animating={this.props.list.length != 0}
 					/>
 					:null
 				}
@@ -54,17 +56,23 @@ class Decoration extends Component{
 			// 			}
 			// 	})
 			// },1000)
-			
-		}
-	}
- n
-	componentWillReceiveProps(nextProps){
-		
+			setTimeout(() => {
+			  this.setState({
+				isShow:false
+			})
+		}, 650)
+			console.log('0000')
+		}else{
+			console.log('不等于0')
 			this.setState({
 				isShow:false
-			})	
-			console.log("有")
+			})
+		}
+	}
+ 	
+	componentWillReceiveProps(nextProps){
 		
+
 	}
 	handleClick(id){
 		this.props.history.push(`/detail/${id}`)
@@ -75,6 +83,5 @@ export default connect((state)=>{
 	console.log(state.decorationReducer)
 	return{
 		list:state.decorationReducer
-
 	}
 },action)(Decoration)
