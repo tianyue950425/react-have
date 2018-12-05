@@ -56,12 +56,8 @@ class Decoration extends Component{
 			// },1000)
 			
 		}
-		this.setState({
-			isShow:false
-		})
-
 	}
-
+ n
 	componentWillReceiveProps(nextProps){
 		
 			this.setState({
