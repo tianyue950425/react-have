@@ -3,16 +3,6 @@ import React,{Component} from "react";
 import axios from "axios";
 import {connect} from "react-redux";
 class Decoration extends Component{
-
-	constructor(props) {
-	  super(props);
-	
-	  this.state = {
-	  	list: [],
-	  	istrue: false
-	  };
-	}
-
 	render(){
 		return (
 			<div>
@@ -35,8 +25,9 @@ class Decoration extends Component{
 			)
 	}
 	componentDidMount(){
-		this.props.getDecorationList()
-		// console.log(this.props)
+		if(this.props.list.length == 0){
+			this.props.getDecorationList();
+		}
 	}
 	handleClick(id){
 		this.props.history.push(`/detail/${id}`)
@@ -44,7 +35,6 @@ class Decoration extends Component{
 }
 
 export default connect((state)=>{
-	console.log(state)
 	return{
 		list:state.decorationReducer
 	}
@@ -57,8 +47,6 @@ export default connect((state)=>{
 				'client-info':'appVersion=5.4&platform=wap&sign=gJtWqZm6tB03k0twPrn2PovXpq8=&timestamp=1543890399145'
 			}
 		}).then(res=>{
-			// console.log(res)
-			
 			return{
 				type:'homeDecoration',
 				payload:res.data.data
