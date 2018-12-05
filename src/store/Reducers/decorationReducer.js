@@ -1,4 +1,4 @@
-const decorationReducer = (prevState=[],action={})=>{
+const decorationReducer = (prevState=[],action)=>{
 	let{type,payload} = action;
 	switch(type){
 		case "homeDecoration":
