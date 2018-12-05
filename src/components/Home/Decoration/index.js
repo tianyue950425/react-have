@@ -1,8 +1,16 @@
 import css from './index.module.scss';
-import React,{Component} from "react";
-import axios from "axios";
-import {connect} from "react-redux";
+import React,{Component} from 'react';
+import axios from 'axios';
+import {connect} from 'react-redux';
+import action from './action';
+import { ActivityIndicator} from 'antd-mobile';
 class Decoration extends Component{
+	constructor(props) {
+	  super(props);
+	  this.state = {
+	  	animating:true
+	  };
+	}
 	render(){
 		return (
 			<div>
@@ -21,12 +29,26 @@ class Decoration extends Component{
 						:null
 					}
 				</div>
+				<ActivityIndicator
+				  toast
+				  text="Loading..."
+				  animating={this.state.animating}
+				/>
 			</div>
 			)
 	}
 	componentDidMount(){
 		if(this.props.list.length == 0){
 			this.props.getDecorationList();
+			setTimeout(()=>{
+				this.setState((prev)=>{
+					console.log(prev.animating)
+						return {
+							animating:false
+						}
+				})
+			},1000)
+			console.log('aaaaaa')
 		}
 	}
 	handleClick(id){
@@ -35,22 +57,8 @@ class Decoration extends Component{
 }
 
 export default connect((state)=>{
+	console.log(state.decorationReducer)
 	return{
 		list:state.decorationReducer
 	}
-},{
-	getDecorationList(){
-		return axios({
-			url:'/api2/itemCategory/getCategoryItemsWithPreItem?parentCategoryId=6190730784899234253',
-			methods:'get',
-			headers:{
-				'client-info':'appVersion=5.4&platform=wap&sign=gJtWqZm6tB03k0twPrn2PovXpq8=&timestamp=1543890399145'
-			}
-		}).then(res=>{
-			return{
-				type:'homeDecoration',
-				payload:res.data.data
-			}
-		})
-	}
-})(Decoration)
+},action)(Decoration)
