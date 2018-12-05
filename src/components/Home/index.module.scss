@@ -36,13 +36,16 @@
 .HomeNav{
 	margin-top: 47px;
 	overflow: hidden;
-	font-size: 18px;
-	border-bottom: 1px black solid;
+	height: 33px;
+	font-size: 14px;
+	text-indent: 20px;
+	line-height: 33px;
+	background: #fff;
 	li{
-		float: left;
-		padding: 10px;
-		border-right: 1px black solid;
-
-
+		a{color:black;}
+		.myactive{
+			padding-bottom: 4px;
+			border-bottom: 3px solid #FFD914;
+		}
 	}
 }
