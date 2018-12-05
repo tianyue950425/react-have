@@ -27,7 +27,7 @@ class Decoration extends Component{
 							})}
 						</ul>
 						:null
-					}
+					} 
 				</div>
 
 				{
