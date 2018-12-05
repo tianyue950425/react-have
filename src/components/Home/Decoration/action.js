@@ -10,7 +10,7 @@ const action = {
 		}).then(res=>{
 			return{
 				type:'homeDecoration',
-				payload:res.data.data,
+				payload:res.data.data
 			}
 			
 		})
