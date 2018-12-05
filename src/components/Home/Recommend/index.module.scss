@@ -1,0 +1,89 @@
+.pht{
+    margin :0 auto;
+	img{
+    width:100%;
+	height:226px;
+	}	
+}
+.new{
+	width:100%;
+	height:175px;
+	.title{
+		text-align: center;
+		width:100%;
+    	padding-top:40px;
+  	  	padding-bottom:20px;
+  	  	font-size:16px;
+	}
+	.tit{
+		padding-bottom:40px;
+		margin-top:38px;
+		text-align: center;
+		font-size:16px;
+	}
+}
+.list{
+	background: linear-gradient(#F8F8F8,#FFF);
+	padding-bottom:50px;
+	.top{
+		text-align: center;
+		color:#4a4a4a;
+	 	font-size:16px;
+		padding-top:40px;
+		padding-bottom:20px;
+	}
+	.have{
+		background: linear-gradient(#F8F8F8,#FFF);
+		.have1{
+		    padding: 0 16px 16px;
+		}
+		img{
+				width:100%;
+				height:80%;
+			}
+			.itname{
+				font-size:18px;
+				color: #4b4b4b;
+				margin-top:16px;
+			}
+			.itdec{
+                font-size:16px;
+                color: #777;
+                margin-top:20px;
+                overflow: hidden;
+               }
+            .other{
+            	margin-top:17px;
+            	line-height: 44px;
+            	height: 44px;
+            	span{
+            		float: left;
+            		font-size:22px;
+            		color: #FE767A;
+            	}
+            	.btn{
+            		float: right;
+            		color: #4A4A4A;
+            		width:70px;
+            		height:30px;
+            		line-height:30px;
+            		font-size:18px;
+            		background-color: #fff;
+            		border: 1px solid #4A4A4A;
+            		border-radius: 5px;
+            		text-align: center;
+            	}
+              }
+	}
+}
+.foot{
+	   background: linear-gradient(#F8F8F8,#FFF);
+	   width:200px;
+	    margin: auto auto;
+	    margin-top:40%;
+	    padding-top:40px;
+	    padding-bottom: 100px;
+	    background-image: url("http://www.myhaowu.com/img/icons/bottom-logo.png");
+	    background-size: 200px 30px;
+	    background-repeat: no-repeat;
+}
