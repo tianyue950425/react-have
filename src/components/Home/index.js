@@ -27,7 +27,7 @@ class Home extends Component{
 				</i>
 			</div>
 			<ul className={css.HomeNav}>
-			<div className="swiper-container">
+			<div className="swiper-container tianyue">
 			    <div className="swiper-wrapper">
 			    <li className="swiper-slide" onClick={()=>{
 			    	this.setState({
@@ -109,7 +109,7 @@ class Home extends Component{
 		</div>
 	}
 	componentDidMount(){
-		var swiper = new Swiper('.swiper-container', {
+		var swiper = new Swiper('.tianyue', {
 		  slidesPerView: 5,
 		  spaceBetween: 0,
 		  pagination: {

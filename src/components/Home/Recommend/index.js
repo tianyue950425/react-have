@@ -15,10 +15,9 @@ class Recommend extends Component{
 	  	render(){
 	  		return <div className={css.a}>
 	                <div className={css.pht}>
-	                  <div className="swiper-container">
+	                  <div className="swiper-container zrr">
 	                      <div className="swiper-wrapper">
 	                  		<img className="swiper-slide" src="https://item.file.myhaowu.com/9e95b2d4-63fd-48eb-aa30-24cde27533cf?imageMogr2/thumbnail/640x"/>
-	                        <div className="swiper-pagination"></div>
 	                       </div>
 	                  </div>
 	                </div>
@@ -39,7 +38,7 @@ class Recommend extends Component{
                         	{	                          
                           this.state.list.map(item=>
                              <div className={css.have1} key={item.itemId} onClick={this.handleClick.bind(this,item.itemId)}>                                                              
-                                      <div className="swiper-container">
+                                      <div className="swiper-container zrr">
                                           <div className="swiper-wrapper">                                         
                                               {
                                                 item.itemImages.map(img=>
@@ -83,7 +82,7 @@ class Recommend extends Component{
   	        this.setState({
   	        list:res.data.data
   	      },()=>{
-  	        var swiper =new Swiper('.swiper-container',{
+  	        var swiper =new Swiper('.zrr',{
   	            pagination: {
   	              el: '.swiper-pagination'
   	              
