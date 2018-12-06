@@ -4,12 +4,14 @@ import Swiper from "swiper";
 import "swiper/dist/css/swiper.css"
 import {NoticeBar} from 'antd-mobile';
 import axios from "axios";
+import { ActivityIndicator} from 'antd-mobile';
 class Recommend extends Component{
 	constructor(props) {
 	  super(props);
 	
 	  this.state = {
-	  	list:[]
+	  	list:[],
+      loding:true
 	  };
 	}	
 	  	render(){
@@ -68,6 +70,11 @@ class Recommend extends Component{
 
                 </div>
                 <div className={css.foot}></div>
+                <ActivityIndicator
+                  toast
+                  text="Loading..."
+                  animating={this.state.loding}
+                />
   		</div>
   	}
   	componentDidMount(){
@@ -88,6 +95,9 @@ class Recommend extends Component{
   	              
   	          }
   	        })
+            this.setState({
+              loding:false
+            })
   	      })
   		})
 
