@@ -16,7 +16,7 @@ class Register extends Component{
 				<div className={css.imgBox}>
 					<img src="./have-text-logo.png"/>
 				</div>
-				<form>
+				<form method="post" action="/api/registeruser">
 					<div>
 						用户名：<input name="username" placeholder="请输入用户名" className="username" onBlur={this.handleBlur.bind(this)}/>
 					</div>

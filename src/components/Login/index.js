@@ -15,7 +15,7 @@ class Login extends Component{
 			<div className={css.imgBox}>
 				<img src="./have.png"/>
 			</div>
-			<form>
+			<form method="post" action="/api/loginuser">
 				<div>
 					<input name="username" placeholder="请输入用户名"/>
 				</div>
