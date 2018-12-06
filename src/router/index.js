@@ -12,6 +12,7 @@ import Textiles from "../components/Home/Textiles";
 import Furniture from "../components/Home/Furniture";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import Detail from "../components/Home/Detail";
 const router = 
 	<Provider store={store}>
 		<Router>
@@ -26,6 +27,7 @@ const router =
 						<Route path="/home/kitchen" component={Kitchen}></Route>
 						<Route path="/home/textiles" component={Textiles}></Route>
 						<Route path="/home/furniture" component={Furniture}></Route>
+						<Route path="/home/detail/:id" component={Detail}></Route>
 						<Redirect path="/home" to="/home/recommend"></Redirect>
 					</Switch>
 				</Home>
