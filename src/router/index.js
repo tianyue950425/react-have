@@ -11,6 +11,8 @@ import Kitchen from "../components/Home/Kitchen";
 import Textiles from "../components/Home/Textiles";
 import Furniture from "../components/Home/Furniture";
 import Login from "../components/Login";
+import Register from "../components/Register";
+import Forget from "../components/Forget";
 const router = 
 	<Provider store={store}>
 		<Router>
@@ -30,6 +32,8 @@ const router =
 				</Home>
 			}></Route>
 			<Route path="/login" component={Login}></Route>
+			<Route path="/register" component={Register}></Route>
+			<Route path="/forget" component={Forget}></Route>
 			<Redirect path="" to="/home"></Redirect>
 			</Switch>
 			</App>
