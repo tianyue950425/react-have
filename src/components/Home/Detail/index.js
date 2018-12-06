@@ -78,9 +78,8 @@ class Detail extends Component{
                   text="Loading..."
                   animating={this.state.loading}
                 />	
-                
 			</div>
-			)
+		)
 	}
 	componentDidMount(){
 		this.props.myHideNavbar()
@@ -105,6 +104,7 @@ class Detail extends Component{
 					loading:false
 				})
 			})
+
 		})
 	}
 	componentWillUnmount(){
