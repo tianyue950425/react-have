@@ -38,7 +38,7 @@ class Login extends Component{
 	handleClick(){
 		var usernameVal = document.querySelector('.username').value;
 		var passwordVal = document.querySelector('.password').value;
-		axios.post('',{
+		axios.post('/api/loginuser',{
 			username:usernameVal,
 			password:passwordVal
 		}).then(res=>{

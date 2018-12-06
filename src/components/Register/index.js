@@ -42,7 +42,7 @@ class Register extends Component{
 		var inputVal = document.querySelector('.username').value;
 		var valReg = /^[a-zA-Z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
 			if(valReg.test(inputVal)){
-				axios.post('',{
+				axios.post('/api/registeruser',{
 					username:inputVal
 				}).then(res=>{
 					console.log()
@@ -59,7 +59,7 @@ class Register extends Component{
 	handleClick(){
 		var usernameVal = document.querySelector('.username').value;
 		var passwordVal = document.querySelector('.password').value;
-		axios.post('',{
+		axios.post('/api/registeruser',{
 			username:usernameVal,
 			password:passwordVal
 		}).then(res=>{
