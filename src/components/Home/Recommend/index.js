@@ -6,6 +6,7 @@ import {NoticeBar} from 'antd-mobile';
 import axios from "axios";
 import { ActivityIndicator} from 'antd-mobile';
 class Recommend extends Component{
+
 	constructor(props) {
 	  super(props);
 	
@@ -38,6 +39,7 @@ class Recommend extends Component{
 	                    <div className={css.top}>为你推荐</div>
 	                    <div className={css.have}>
                         	{	                          
+
                           this.state.list.map(item=>
                              <div className={css.have1} key={item.itemId} onClick={this.handleClick.bind(this,item.itemId)}>                                                              
                                       <div className="swiper-container zrr">
@@ -63,9 +65,9 @@ class Recommend extends Component{
                                         <div className={css.btn} onClick={this.handleClick.bind(this,item.itemId)}>购买</div>
                                       </div>                                                                                    
                              </div>
-	                            
+                              
                           )
-	                        }
+                          }
                   </div>
 
                 </div>
@@ -75,8 +77,8 @@ class Recommend extends Component{
                   text="Loading..."
                   animating={this.state.loding}
                 />
-  		</div>
-  	}
+      </div>
+    }
   	componentDidMount(){
   		axios({
   			url:'/api2/item/getRecommendItemsListWithPreItem?number=0',
@@ -101,7 +103,7 @@ class Recommend extends Component{
   	      })
   		})
 
-  	 }
+}
   	handleClick(id){
        this.props.history.push(`/home/detail/${id}`)
   }
