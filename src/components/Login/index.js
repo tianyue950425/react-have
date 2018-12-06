@@ -10,18 +10,16 @@ class Login extends Component{
 			</div>
 			<form>
 				<div>
-					<i className="iconfont icon-account"/>
-					<input name="phone" placeholder="请输入手机号" className="phone"/>
+					<input name="username" placeholder="请输入用户名"/>
 				</div>
 				<div>
-					<i className="iconfont icon-bags"/>
-					<input name="password" placeholder="请输入密码" className="password"/>
+					<input name="password" placeholder="请输入密码"/>
 				</div>
 				<button>登录</button>
 			</form>
 			<ul>
-				<li><NavLink to="/register">手机号注册</NavLink></li>
-				<li><NavLink to="/forget">忘记密码</NavLink></li>
+				<li><NavLink to="/register">注册</NavLink></li>
+				<li><NavLink to="/">忘记密码?</NavLink></li>
 			</ul>
 		</div>
 		)
