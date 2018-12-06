@@ -115,7 +115,7 @@ class Home extends Component{
 		  spaceBetween: 0,
 		  pagination: {
 		    el: '.swiper-pagination',
-		    clickable: true,
+		    clickable: true
 		  }
 		});
 	}
