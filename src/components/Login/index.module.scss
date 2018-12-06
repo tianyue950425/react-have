@@ -5,7 +5,7 @@
 	padding-top:90px;
 	margin:0 auto;
 	box-sizing: border-box;
-	height:1000px;
+	height:800px;
 	.imgBox{
 		width:20%;
 		margin:0 auto;
@@ -31,6 +31,23 @@
 			border:none;
 			border-radius: 6px;
 			margin-top:20px;
+		}
+	}
+	ul{
+		width:70%;
+		overflow:hidden;
+		margin:10px auto 0 auto;
+		li{
+			a{
+				font-size:10px;
+				color:#4A4A4A;
+			}
+		}
+		li:first-of-type{
+			float:left;
+		}
+		li:last-of-type{
+			float:right;
 		}
 	}
 }
