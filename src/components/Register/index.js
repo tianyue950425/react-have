@@ -39,13 +39,12 @@ class Register extends Component{
 					isShow:true
 				})
 			}else{
-				axios({
-					url:'',
-					method:'post',
-					params:{
-						username:inputVal
-					}
+				axios.post('',{
+					username:inputVal
+				}).then(res=>{
+					console.log()
 				})
+					
 			}
 	}
 }
