@@ -27,9 +27,9 @@ class Register extends Component{
 						this.state.isFalse?<span>用户名不可用</span>:null
 					}
 					<div>
-						密码： <input name="password" placeholder=" 请输入密码"/>
+						密码： <input name="password" placeholder=" 请输入密码" className="password"/>
 					</div>
-					<button>立即注册</button>
+					<button onClick={this.handleClick.bind(this)}>立即注册</button>
 					{
 						this.state.isShow?<div className={css.Box}></div>:null
 					}
@@ -55,6 +55,24 @@ class Register extends Component{
 					isShow:true
 				})
 			}
+	}
+	handleClick(){
+		var usernameVal = document.querySelector('.username').value;
+		var passwordVal = document.querySelector('.password').value;
+		axios.post('',{
+			username:usernameVal,
+			password:passwordVal
+		}).then(res=>{
+			console.log(res);
+			if(res.data){
+				alert("注册成功");
+				setTimeout(() => {
+				  window.location.href='/home'
+				}, 1000)
+			}else{
+				alert("注册失败")
+			}
+		})
 	}
 }
 export default Register;
