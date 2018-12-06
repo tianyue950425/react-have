@@ -9,8 +9,7 @@ class Recommend extends Component{
     super(props);
   
     this.state = {
-      list:[],
-      list1:[]
+      list:[]
     };
   } 
       render(){
@@ -25,24 +24,6 @@ class Recommend extends Component{
                   <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 200px'} }}>
                        好物公告 关于退换货服务
                   </NoticeBar>
-                  <div className={css.show}>
-                    <div className={css.showtit}>达人Show</div>
-
-                      <div className="swiper-container zrr1">
-                          <div className="swiper-wrapper">
-                              {
-                              this.state.list1.map(item1=>
-                               <div className={css.showtop} key={item1.id} className="swiper-slide">                       
-                                      <img src={item1.imageUrl} className={css.showimg}/>
-                                 </div>
-                               )
-                              } 
-                          </div>
-                          <div className="swiper-button-next"></div>
-                          <div className="swiper-button-prev"></div>
-                    
-                      </div>               
-                  </div>
                   <div className={css.new}>
                       <div className={css.title}>
                           周一周四 - 新品首发
@@ -77,7 +58,7 @@ class Recommend extends Component{
                                       </div>
                                       <div className={css.other}>
                                         <span>￥{item.minPrice}</span>
-                                        <div className={css.btn} onClick={this.handleClick.bind(this,item.id)}>购买</div>
+                                        <div className={css.btn} onClick={this.handleClick.bind(this,item.itemId)}>购买</div>
                                       </div>                                                                                    
                              </div>
                               
@@ -105,36 +86,16 @@ class Recommend extends Component{
                 var swiper =new Swiper('.zrr',{
                     pagination: {
                       el: '.swiper-pagination'
-
                   }
-                })
-              })
-          })
-          axios({
-            url:'/api2/item/getStoreFeedWithPreItem',
-            method:'get',
-            headers:{
-              'client-info':'appVersion=5.4&platform=wap&sign=mkkz964L4WN+E3+AZDXft2HsBj4=&timestamp=1543988369905'
-            }
-          }).then(res=>{
-            console.log(res.data.data[3].questions)
-                this.setState({
-                list1:res.data.data[3].questions
-              },()=>{
-                var swiper =new Swiper('.zrr1',{
-                    pagination: {
-                      el:'.swiper-pagination'
-                  },
-                  navigation: {
-                          nextEl: '.swiper-button-next',
-                          prevEl: '.swiper-button-prev',
-                   }
                 })
               })
           })
         }
     handleClick(id){
         console.log(id);
+  	 }
+  	handleClick(id){
+       this.props.history.push(`/home/detail/${id}`)
   }
 }
 export default Recommend;
