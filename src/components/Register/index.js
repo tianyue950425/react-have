@@ -30,32 +30,6 @@ class Register extends Component{
 			</div>
 			)
 	}
-	// componentDidMount(){
-	// 	var input = document.querySelector('.username')
-	// 	input.onblur = function(){
-	// 		var inputVal = document.querySelector('.username').value;
-	// 		if(inputVal === ''){
-	// 			console.log('aaaaaaaaaaaa')
-	// 			this.setState({
-	// 				isShow:true
-	// 			})
-	// 		}else{
-	// 			axios({
-	// 				url:'',
-	// 				method:'post',
-	// 				params:{
-	// 					username:inputVal
-	// 				}
-	// 			})
-	// 		}
-	// 	}
-	// 	input.onblur =function(){
-	// 		console.log(this)
-	// 		this.setState({
-	// 			isShow:true
-	// 		})
-	// 	}
-	// }
 	handleBlur(){
 		var input = document.querySelector('.username');
 		var inputVal = document.querySelector('.username').value;
