@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import css from "./index.module.scss";
 import {NavLink} from "react-router-dom";
 import Swiper from "swiper";
+import axios from "axios";
 class Home extends Component{
 	constructor(props) {
 	  super(props);
