@@ -4,6 +4,7 @@ class Forget extends Component{
 	render(){
 		return(
 			<div>
+				<div>a</div>
 				Forget
 			</div>
 			)
