@@ -1,12 +1,20 @@
 import css from './index.module.scss';
-import React,{Component} from "react";
-import axios from "axios";
-import {connect} from "react-redux";
+import React,{Component} from 'react';
+import axios from 'axios';
+import {connect} from 'react-redux';
+import action from './action';
+import { ActivityIndicator} from 'antd-mobile';
 class Decoration extends Component{
+	constructor(props) {
+	  super(props);
+	  this.state = {
+		isShow:true
+	  };
+	}
 	render(){
 		return (
 			<div>
-				<img src={this.props.list.imageUrl}/>
+			<img src={this.props.list.imageUrl}/>
 				<div className={css.box}>
 					{this.props.list.items?
 						<ul className={css.list}>
@@ -19,15 +27,52 @@ class Decoration extends Component{
 							})}
 						</ul>
 						:null
+
+
+
 					}
-				</div>
+					</div>
+				{
+					this.state.isShow?
+					<ActivityIndicator
+					  toast
+					  text="Loading..."
+					  animating={this.props.list.length != 0}
+					/>
+					:null
+				}
+					
 			</div>
 			)
 	}
 	componentDidMount(){
 		if(this.props.list.length == 0){
 			this.props.getDecorationList();
+			// setTimeout(()=>{
+			// 	this.setState((prev)=>{
+			// 		console.log(prev.animating)
+			// 			return {
+			// 				animating:false
+			// 			}
+			// 	})
+			// },1000)
+			setTimeout(() => {
+			  this.setState({
+				isShow:false
+			})
+		}, 650)
+			console.log('0000')
+		}else{
+			console.log('不等于0')
+			this.setState({
+				isShow:false
+			})
 		}
+	}
+ 	
+	componentWillReceiveProps(nextProps){
+		
+
 	}
 	handleClick(id){
 		this.props.history.push(`/detail/${id}`)
@@ -35,22 +80,8 @@ class Decoration extends Component{
 }
 
 export default connect((state)=>{
+	console.log(state.decorationReducer)
 	return{
 		list:state.decorationReducer
 	}
-},{
-	getDecorationList(){
-		return axios({
-			url:'/api2/itemCategory/getCategoryItemsWithPreItem?parentCategoryId=6190730784899234253',
-			methods:'get',
-			headers:{
-				'client-info':'appVersion=5.4&platform=wap&sign=gJtWqZm6tB03k0twPrn2PovXpq8=&timestamp=1543890399145'
-			}
-		}).then(res=>{
-			return{
-				type:'homeDecoration',
-				payload:res.data.data
-			}
-		})
-	}
-})(Decoration)
+},action)(Decoration)
