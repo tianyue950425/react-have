@@ -58,7 +58,7 @@ class Recommend extends Component{
                                       </div>
                                       <div className={css.other}>
                                         <span>￥{item.minPrice}</span>
-                                        <div className={css.btn} onClick={this.handleClick.bind(this,item.id)}>购买</div>
+                                        <div className={css.btn} onClick={this.handleClick.bind(this,item.itemId)}>购买</div>
                                       </div>                                                                                    
                              </div>
 	                            
@@ -93,7 +93,7 @@ class Recommend extends Component{
 
   	 }
   	handleClick(id){
-        console.log(id);
+       this.props.history.push(`/home/detail/${id}`)
   }
 }
 export default Recommend;

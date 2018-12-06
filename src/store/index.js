@@ -5,12 +5,14 @@ import admissionReducer from "./Reducers/admissionReducer";
 import kitchenReducer from "./Reducers/kitchenReducer";
 import textilesReducer from "./Reducers/textilesReducer";
 import furnitureReducer from "./Reducers/furnitureReducer"
+import homeNavReducer from "./Reducers/homeNavReducer"
 const reducer = combineReducers({
 	decorationReducer,
 	admissionReducer,
 	kitchenReducer,
 	textilesReducer,
-	furnitureReducer
+	furnitureReducer,
+	homeNavReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
