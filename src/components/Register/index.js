@@ -39,10 +39,10 @@ class Register extends Component{
 					isShow:true
 				})
 			}else{
-				axios.post('',{
+				axios.post('/api/checkusername',{
 					username:inputVal
 				}).then(res=>{
-					console.log()
+					
 				})
 					
 			}
