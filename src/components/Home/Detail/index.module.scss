@@ -1,5 +1,123 @@
 .Detail{
+	background-color: white;
 	margin-top:45px;
+   .det{
+	  
+	  padding-top:20px;
+	  padding-bottom: 15px;
+	  overflow: hidden;
+	  
+	  .text{
+	  	margin-left: 20px;
+	  	color: #4A4A4A;
+	  	font-size:16px;
+	  }
+	  .price{
+	  	
+	  	    height:20px; 
+	  	    line-height:20px;
+	  		margin-left: 20px;
+	  	    font-size:20px;
+	  	    color: #E75058;
+	  	    margin-top: 7.5px;
+	  }
+	  .col{
+	  	    background-color: white;
+	  	    margin-left: 17px;
+	  	    margin-top: 7.5px;
+	  	    margin-bottom: 20px;
+	  	    font-size: 14px;
+	  	    color: #9c9c9c;	  	
+	  	ul{
+	  	   li{
+	  	   	float:left;
+	  	   	padding-right:40px;
+	  	   }
+	  	}
+	  }
+     }
+    .fix{
+     	    background-color: white;
+     	    margin-top: 2px;
+     	    padding-top: 15px;
+     	    padding-bottom: 15px;
+     	    padding-left: 20px;
+     	    padding-right: 20px;
+     	    zoom: 1;
+     	    font-size:14px;
+     	    color: #9c9c9c;	 
+     }
+    .ques{
+    	 background-color: white;
+    	 .qu1{
+    	 	font-size: 14px;
+			margin-left:20px;
+			margin-top:2px;
+			color: #777777;
+			padding-top: 15px;
+			margin-bottom:10px;
+    	 }
+    	 .qu2{
+    	     font-size: 14px;
+    	     margin-top: 15px;
+    	     margin-right: 20px;
+    	     margin-left: 20px;
+    	     color: #777777;
+    	     padding-bottom: 40px;
+    	     margin-bottom: 2px;	
+    	 }
+    }
+    .foot{
+	   background: linear-gradient(#F8F8F8,#FFF);
+	    width:200px;
+	    margin: auto auto;
+	    margin-top:40%;
+	    padding-top:40px;
+	    padding-bottom: 100px;
+	    background-image: url("http://www.myhaowu.com/img/icons/bottom-logo.png");
+	    background-size: 200px 30px;
+	    background-repeat: no-repeat;
+	    margin-bottom:55px;
+	}
+	.bot{
+		background-color: white;
+	    width:100%;
+		height:55px;
+		position:fixed;
+		bottom:0;
+        margin: 0 auto;
+        box-shadow: 0 0 1px rgba(0,0,0,.3);
+		background: #fff;
+		z-index:99999;
 
-	
+		.bar{
+			float: right;
+			margin-top:8px;
+			margin-right: 14px;
+			.btn1{
+				width:100px;
+				height:40px;
+				line-height:30px;
+				cursor: pointer;
+				color: #777;
+				border: 1px solid #777;
+				background: #fff;
+				font-size: 14px;
+				border-radius: 4px;
+				text-align: center;
+			}
+			.btn2{
+				    width:100px;
+				    height:40px;
+				    line-height:30px;
+					background: #FFD914;
+				    color: #4A4A4A;
+				    border: 1px solid transparent;
+				    font-size: 14px;
+				    cursor: pointer;
+				    border-radius: 4px;
+				    margin-left:12px;
+			}
+		}
+	}
 }

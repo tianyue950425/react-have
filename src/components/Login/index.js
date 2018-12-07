@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import css from "./index.module.scss";
-import {NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import axios from "axios"
 class Login extends Component{
 	constructor(props) {
 	  super(props);
@@ -35,7 +36,24 @@ class Login extends Component{
 		)
 	}
 	handleClick(){
-
+		var usernameVal = document.querySelector('.username').value;
+		var passwordVal = document.querySelector('.password').value;
+		axios.post('/api/loginuser',{
+			username:usernameVal,
+			password:passwordVal
+		}).then(res=>{
+			console.log(res);
+			if(res.data){
+				alert("登录成功");
+				setTimeout(() => {
+				  window.location.href='/home'
+				}, 1000)
+			}else{
+				this.setState({
+					isShow:true
+				})
+			}
+		})
 	}
 }
 export default Login;
