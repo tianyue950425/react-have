@@ -18,6 +18,8 @@ class Detail extends Component{
 	render(){
 		return(
 			<div className={css.Detail}>
+			        <h2>该页面为ID:{this.props.match.params.id} 的详情页</h2>
+
                <div className={css.img1}>
 	            {
 	            	this.state.list.itemImages?
