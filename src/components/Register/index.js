@@ -7,7 +7,8 @@ class Register extends Component{
 	
 	  this.state = {
 	  	isShow:false,
-	  	isFalse:false
+	  	isFalse:false,
+	  	isNull:false
 	  };
 	}
 	render(){
@@ -26,6 +27,9 @@ class Register extends Component{
 					{
 						this.state.isFalse?<span>用户名不可用</span>:null
 					}
+					{
+						this.state.isNull?<span>用户名密码不能为空</span>:null
+					}
 					<div>
 						密码： <input type="password" name="password" placeholder=" 请输入密码" className="password"/>
 					</div>
@@ -41,6 +45,7 @@ class Register extends Component{
 		var input = document.querySelector('.username');
 		var inputVal = document.querySelector('.username').value;
 		var valReg = /^[a-zA-Z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
+		/*if(inputVal)*/
 			if(valReg.test(inputVal)){
 				axios.post('/api/checkusername',{
 					username:inputVal
@@ -67,20 +72,32 @@ class Register extends Component{
 	handleClick(){
 		var usernameVal = document.querySelector('.username').value;
 		var passwordVal = document.querySelector('.password').value;
-		axios.post('/api/registeruser',{
-			username:usernameVal,
-			password:passwordVal
-		}).then(res=>{
-			console.log(res.data);
-			if(res.data){
-				alert("注册成功");
-				setTimeout(() => {
-				  window.location.href='/home'
-				}, 1000)
-			}else{
-				alert("注册失败")
-			}
-		})
+		if(usernameVal!==''&& passwordVal!==''){
+			axios.post('/api/registeruser',{
+				username:usernameVal,
+				password:passwordVal
+			}).then(res=>{
+				console.log(res.data);
+				if(res.data){
+					alert("注册成功");
+					
+					window.location.href='/home'
+					
+				}else{
+					alert("注册失败")
+				}
+			})
+		}else{
+			this.setState({
+				isNull:true
+			})
+			setTimeout(() => {
+				  this.setState({
+					isNull:false
+				})
+			}, 1500)
+		}
+		
 	}
 }
 export default Register;
