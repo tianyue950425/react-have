@@ -24,7 +24,8 @@ class Recommend extends Component{
 	                       </div>
 	                  </div>
 	                </div>
-	                <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 200px'} }}>
+	                <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 200px'}}}
+                  onclick={()=>window.location="#/advertorial"}>
 	                     好物公告 关于退换货服务
 	                </NoticeBar>
 	                <div className={css.new}>

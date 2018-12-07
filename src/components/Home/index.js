@@ -20,7 +20,9 @@ class Home extends Component{
 	render(){
 		return <div className={css.home}>
 			<div className={css.HomeTop}>
-				<i className="iconfont icon-store"></i>
+				<i className="iconfont icon-store" onClick={()=>
+					window.location="#/home"
+				}></i>
 				<h2 className={css.logo}>好物</h2>
 				<i className="iconfont icon-cart"></i>
 				<i className="iconfont icon-gerenzhongxin" onClick={()=>

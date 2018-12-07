@@ -75,7 +75,7 @@ class Decoration extends Component{
 
 	}
 	handleClick(id){
-		this.props.history.push(`/detail/${id}`)
+		this.props.history.push(`/home/detail/${id}`)
 	}
 }
 
