@@ -16,17 +16,17 @@ class Login extends Component{
 			<div className={css.imgBox}>
 				<img src="./have.png"/>
 			</div>
-			<form method="post" action="/api/loginuser">
+			<form>
 				<div>
-					<input name="username" placeholder="请输入用户名"/>
+					<input type="text" name="username" placeholder="请输入用户名" className="username"/>
 				</div>
 				<div>
-					<input name="password" placeholder="请输入密码"/>
+					<input type="password" name="password" placeholder="请输入密码" className="password" />
 				</div>
 				{
 					this.state.isShow?<span>用户名或密码错误</span>:null
 				}
-				<button onClick={this.handleClick.bind(this)}>登录</button>
+				<button type="button" onClick={this.handleClick.bind(this)}>登录</button>
 			</form>
 			<ul>
 				<li><NavLink to="/register">注册</NavLink></li>

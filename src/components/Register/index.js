@@ -16,9 +16,9 @@ class Register extends Component{
 				<div className={css.imgBox}>
 					<img src="./have-text-logo.png"/>
 				</div>
-				<form method="post" action="/api/registeruser">
+				<form>
 					<div>
-						用户名：<input name="username" placeholder="请输入用户名" className="username" onBlur={this.handleBlur.bind(this)}/>
+						用户名：<input type="text" name="username" placeholder="请输入用户名" className="username" onBlur={this.handleBlur.bind(this)}/>
 					</div>
 					{
 						this.state.isShow?<span>用户名不合法</span>:null
@@ -27,9 +27,9 @@ class Register extends Component{
 						this.state.isFalse?<span>用户名不可用</span>:null
 					}
 					<div>
-						密码： <input name="password" placeholder=" 请输入密码" className="password"/>
+						密码： <input type="password" name="password" placeholder=" 请输入密码" className="password"/>
 					</div>
-					<button onClick={this.handleClick.bind(this)}>立即注册</button>
+					<button type="button" onClick={this.handleClick.bind(this)}>立即注册</button>
 					{
 						this.state.isShow?<div className={css.Box}></div>:null
 					}
@@ -47,11 +47,11 @@ class Register extends Component{
 				}).then(res=>{
 					if(res.data){
 						this.setState({
-							isShow:false
+							isFalse:false
 						})
 					}else{
 						this.setState({
-							isShow:true
+							isFalse:true
 						})
 					}
 				})
@@ -71,7 +71,7 @@ class Register extends Component{
 			username:usernameVal,
 			password:passwordVal
 		}).then(res=>{
-			console.log(res);
+			console.log(res.data);
 			if(res.data){
 				alert("注册成功");
 				setTimeout(() => {
